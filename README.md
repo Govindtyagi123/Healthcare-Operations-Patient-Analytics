@@ -6,15 +6,9 @@ Healthcare organizations need to understand how patients move through different 
 
 An appointment may lead to a prescription only, or involve additional services such as laboratory tests, imaging, or pharmacy services. Understanding these care pathways can help identify service utilization patterns, doctor-level prescription activity, and unusual prescription timing or duration patterns.
 
-This project uses healthcare operational data to investigate these questions through **Python-based analysis and an interactive Power BI dashboard**.
+This project analyzes healthcare operational data using **Python and Power BI** to investigate patient care pathways, service utilization, prescription patterns, and potential data-quality issues.
 
-The goal is not simply to create charts, but to understand:
-
-- How patients move through different care pathways
-- How frequently additional services are used
-- How prescription activity is distributed across doctors
-- How prescription duration varies
-- Whether appointment and prescription timestamps contain unusual patterns
+The goal is not simply to create a dashboard, but to use data to answer operational questions and identify areas that may require further investigation.
 
 ---
 
@@ -30,7 +24,7 @@ The goal is not simply to create charts, but to understand:
 
 ---
 
-# Key Business Questions
+## Key Business Questions
 
 ### Care Pathways
 
@@ -41,27 +35,26 @@ The goal is not simply to create charts, but to understand:
 
 ### Service Utilization
 
-- How frequently is Lab service used?
-- How frequently is Imaging service used?
-- How frequently is Pharmacy service used?
-- What percentage of appointments involve multiple services?
+- How frequently are Lab, Imaging, and Pharmacy services used?
+- What proportion of appointments involve multiple services?
+- Which combinations of services occur most frequently?
 
 ### Doctor Analysis
 
 - How is prescription volume distributed across doctors?
 - Which doctors have higher prescription volumes?
-- Do doctors show different care/service patterns?
+- Do doctors show different care or service patterns?
 - How does prescription duration vary across doctors?
 
 ### Prescription Analysis
 
 - What is the distribution of prescription duration?
 - Are there unusually short or long prescription durations?
-- Are there records where prescription timing appears inconsistent with the appointment timing?
+- Are there records where prescription timing appears inconsistent with appointment timing?
 
 ---
 
-# Dataset
+## Dataset
 
 The dataset contains healthcare appointment, prescription, doctor, and service-flow information.
 
@@ -156,79 +149,53 @@ The cleaned and analyzed data was used to create an interactive Power BI dashboa
 
 ## Page 1 — Healthcare Operations Overview
 
-### Purpose
+This page provides a high-level view of healthcare activity.
 
-Provide a high-level view of healthcare activity.
+It focuses on:
 
-### Visuals
+- Overall appointment activity
+- Patient and prescription volume
+- Doctor activity
+- Care pathway distribution
+- Changes in appointment activity over time
+- The overall relationship between appointments and prescriptions
 
-- Total Appointments — KPI Card
-- Total Patients — KPI Card
-- Total Prescriptions — KPI Card
-- Total Doctors — KPI Card
-- Appointment Trend Over Time — Line Chart
-- Care Mix — 100% Stacked Bar Chart
-- Appointment → Prescription Overview
-- Appointments by Doctor — Bar Chart
-
-### Main Questions
-
-- What is the overall healthcare activity?
-- How are appointments distributed across care pathways?
-- How does appointment activity change over time?
-- How is appointment activity distributed across doctors?
+The purpose is to provide a starting point for understanding the overall operational picture.
 
 ---
 
 ## Page 2 — Care Pathway & Service Utilization
 
-### Purpose
+This page focuses on how patients move through different healthcare services after their appointments.
 
-Understand how patients move through healthcare services after their appointments.
+It investigates:
 
-### Visuals
+- Lab utilization
+- Imaging utilization
+- Pharmacy utilization
+- Prescription-only pathways
+- Single-service pathways
+- Multi-service pathways
+- Common combinations of healthcare services
+- Prescription duration patterns
 
-- Lab Appointments — KPI Card
-- Imaging Appointments — KPI Card
-- Multi-Service Appointments — KPI Card
-- Service-Level Appointment Distribution — 100% Stacked Bar Chart
-- Multi-Service Combinations — Bar Chart
-- Key Service Metrics — KPI Cards
-- Prescription Duration Distribution — Bar/Column Chart
-
-### Main Questions
-
-- How common are additional services?
-- Which service combinations occur most frequently?
-- What proportion of appointments involve multiple services?
-- How is prescription duration distributed?
+The purpose is to understand **how healthcare services are being utilized and how different services are combined within patient care pathways**.
 
 ---
 
 ## Page 3 — Doctor & Prescription Performance
 
-### Purpose
+This page focuses on doctor-level prescription activity and care patterns.
 
-Analyze doctor-level prescription activity and care patterns.
+It investigates:
 
-### Visuals
+- Prescription workload across doctors
+- Doctor-level prescription activity
+- Differences in prescription duration
+- Doctor-level care patterns
+- Service patterns associated with different doctors
 
-- Total Doctors — KPI Card
-- Total Prescriptions — KPI Card
-- Average Prescription Duration — KPI Card
-- Prescription Volume by Doctor — Horizontal Bar Chart
-- Prescription Duration by Doctor — Bar Chart
-- Doctor Care Mix — Bar Chart
-- Doctor Prescription Summary — Table/Matrix
-
-### Main Questions
-
-- How is prescription workload distributed across doctors?
-- How does prescription duration vary across doctors?
-- Do doctors show different care/service patterns?
-- Which doctors have higher prescription volumes?
-
-A **Date slicer** can be used to analyze doctor activity for a selected period. A separate Doctor slicer is not necessary because the page itself is focused on doctor-level analysis.
+The purpose is to understand **how prescription activity and care patterns vary across doctors**.
 
 ---
 
@@ -257,7 +224,7 @@ The project focuses on four major areas:
 
 ### 1. Care Pathway Analysis
 
-Understanding how appointments progress into prescriptions and additional services.
+Understanding how appointments progress into prescriptions and additional healthcare services.
 
 ### 2. Service Utilization
 
@@ -265,7 +232,7 @@ Measuring the usage of Lab, Imaging, Pharmacy, and multi-service pathways.
 
 ### 3. Doctor-Level Analysis
 
-Understanding differences in prescription volume and care patterns across doctors.
+Understanding differences in prescription activity and care patterns across doctors.
 
 ### 4. Prescription Workflow
 
@@ -275,16 +242,16 @@ Examining prescription duration and identifying potentially unusual timing patte
 
 # Business Insight Framework
 
-The final analysis is structured around:
+The project follows a business-problem-first analytical approach:
 
-**Business Problem → Questions → Metrics → Analysis → Findings → Recommendations**
+**Business Problem → Business Questions → Metrics → Analysis → Findings → Recommendations**
 
 Rather than creating insights simply from charts, each finding should answer a specific operational question.
 
 Examples include:
 
 - Which care pathways account for the largest share of appointments?
-- Which services are most frequently used?
+- Which healthcare services are most frequently used?
 - Which service combinations are common?
 - How is prescription workload distributed across doctors?
 - Are prescription durations consistent?
@@ -365,10 +332,16 @@ This project demonstrates an end-to-end healthcare analytics workflow:
 ↓  
 **Python Analysis**  
 ↓  
-**KPI & Metric Development**  
+**Metric Development**  
 ↓  
 **Power BI Dashboard**  
 ↓  
 **Findings & Recommendations**
 
-The project focuses on demonstrating how a Data Analyst can use operational data to answer business questions and investigate potential workflow and data-quality issues, rather than simply building a collection of charts.
+The project demonstrates how healthcare operational data can be used to investigate business questions, understand patient care pathways, analyze service utilization, examine prescription patterns, and identify potential data-quality issues.
+
+---
+
+## Repository Description
+
+**Healthcare operations analytics project using Python and Power BI to analyze patient care pathways, service utilization, prescription patterns, and operational data quality.**
